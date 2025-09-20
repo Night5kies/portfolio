@@ -188,7 +188,7 @@ const PROJECTS = [
     purpose: "Personal Project",
     tags: ["Python", "Pygame", "Game Dev"],
     image: "Dino Game.png",
-    links: { live: "#", source: "#" },
+    links: { source: "https://github.com/Night5kies/Dino-Game" },
   },
 ];
 
