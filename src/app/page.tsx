@@ -418,13 +418,17 @@ function Hero() {
     <section id="home" className="relative overflow-hidden h-screen flex items-center justify-center mt-[-10vh]">
       <div className="absolute inset-0 -z-10 opacity-30 dark:opacity-40 bg-gradient-to-b from-sky-100/20 to-transparent dark:from-sky-900/20"/>
       <SparkleField />
-      <div className="mx-auto max-w-6xl px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
-        <motion.div variants={containerVariants} initial="hidden" animate="show" className="space-y-6">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight bg-clip-text bg-[linear-gradient(90deg,theme(colors.foreground),theme(colors.primary))]">
+      <div className="mx-auto max-w-6xl px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center ">
+        <motion.div variants={containerVariants} initial="hidden" animate="show" className="space-y-6 ">
+          <div className="relative">
+            {/* translucent background card behind the text */}
+            <div className="absolute inset-0 -z-10 rounded-3xl bg-white/60 dark:bg-black/40 backdrop-blur-sm shadow-lg transform -translate-y-2 md:-translate-y-4 mx-0 md:mx-0" />
+            <div className="relative px-4 py-6 md:py-8 md:px-8 rounded-2xl">
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tight bg-clip-text bg-[linear-gradient(90deg,theme(colors.foreground),theme(colors.primary))]">
             {PROFILE.name}
           </h1>
-          <p className="text-lg text-sky-800 dark:text-sky-200">{PROFILE.title}</p>
-          <p className="text-sky-800 dark:text-sky-200 max-w-prose">{PROFILE.blurb}</p>
+              <p className="text-lg text-sky-800 dark:text-sky-200 mt-1">{PROFILE.title}</p>
+              <p className="text-sky-800 dark:text-sky-200 max-w-prose mt-3">{PROFILE.blurb}</p>
           <div className="flex flex-wrap gap-3">
             <Button onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })} className='bg-sky-500 hover:bg-sky-600 text-white'>
               See my work <ArrowRight className="ml-2 h-4 w-4"/>
@@ -433,10 +437,15 @@ function Hero() {
               Resume <Download className="ml-2 h-4 w-4"/>
             </Button>
           </div>
-          <div className="flex items-center gap-3 pt-2">
-            <a aria-label="GitHub" href={PROFILE.social.github} target="_blank" rel="noreferrer" className="opacity-80 hover:text-sky-500"><Github/></a>
-            <a aria-label="LinkedIn" href={PROFILE.social.linkedin} target="_blank" rel="noreferrer" className="opacity-80 hover:text-sky-500"><Linkedin/></a>
-            <a aria-label="Email" href={PROFILE.social.email} className="opacity-80 hover:text-sky-500"><Mail/></a>
+              <div className="flex flex-col items-start gap-2 pt-4">
+                <div className="text-sm text-gray-700 dark:text-gray-300">Contact me</div>
+                <div className="flex items-center gap-3">
+                  <a aria-label="GitHub" href={PROFILE.social.github} target="_blank" rel="noreferrer" className="opacity-80 hover:text-sky-500"><Github/></a>
+                  <a aria-label="LinkedIn" href={PROFILE.social.linkedin} target="_blank" rel="noreferrer" className="opacity-80 hover:text-sky-500"><Linkedin/></a>
+                  <a aria-label="Email" href={PROFILE.social.email} className="opacity-80 hover:text-sky-500"><Mail/></a>
+                </div>
+              </div>
+            </div>
           </div>
         </motion.div>
         <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="relative">
