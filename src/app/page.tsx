@@ -32,9 +32,9 @@ const PROFILE = {
   title: "Software Engineer @ Harvard",
   location: "Cambridge, MA",
   blurb:
-    "I build clean, performant products at the intersection of AI and delightful UX.",
+    "Hi! I'm currently a junior at Harvard pursuing a double major in Computer Science and Physics. I'm passionate about all different kinds of software and engineering, from AI to web development to robotics to game development! In my free time, I love dancing, playing instruments, running, playing frisbee, travelling, trying new restaurants and more!",
   email: "kevinmcleod@college.harvard.edu",
-  resumeUrl: "/Kevin McLeod Resume.pdf", // drop a file at public/resume.pdf
+  resumeUrl: "/Kevin McLeod Resume.pdf",
   social: {
     github: "https://github.com/night5kies",
     linkedin: "https://linkedin.com/in/kevin-jh-mcleod",
@@ -42,70 +42,160 @@ const PROFILE = {
   },
 };
 
-const PROJECTS = [
-  {
-    title: "Orion – Unified Inbox & Tasks",
-    desc:
-      "AI productivity assistant that organizes email, calendar, and tasks with realtime copilots.",
-    tags: ["AI", "Next.js", "Postgres", "WebSockets"],
-    image: "https://picsum.photos/seed/orion/800/500",
-    links: {
-      live: "#",
-      source: "#",
-    },
-    impact: "Cut triage time by 62% across a 1k user beta.",
-  },
-  {
-    title: "Strassen — Fast Matrix Multiply",
-    desc:
-      "Educational implementation with diagonal‑only output optimization and CLI runner.",
-    tags: ["Python", "Algorithms"],
-    image: "https://picsum.photos/seed/strassen/800/500",
-    links: { live: "#", source: "#" },
-    impact: "3.1× speedup over naive n³ on 1024×1024 inputs.",
-  },
-  {
-    title: "WearSense — Head‑Trauma Monitor",
-    desc:
-      "Wearable IMU + on‑edge anomaly detection for athletes and first responders.",
-    tags: ["Edge AI", "Embedded", "Signal Processing"],
-    image: "https://picsum.photos/seed/wearsense/800/500",
-    links: { live: "#", source: "#" },
-    impact: "Detected 94% of high‑G events in field trials.",
-  },
-  {
-    title: "Robodog Walker",
-    desc:
-      "Embodied agent for modular scene understanding with energy‑based compositional models.",
-    tags: ["Robotics", "3D", "Energy Models"],
-    image: "https://picsum.photos/seed/robodog/800/500",
-    links: { live: "#", source: "#" },
-    impact: "Generalized to unseen indoor layouts with zero map priors.",
-  },
-];
+
 
 const EXPERIENCE = [
   {
-    role: "Cofounder & Full‑Stack Engineer",
-    org: "SYZY",
-    date: "2024 — Present",
-    loc: "Boston, MA",
-    bullets: [
-      "Designed and shipped real‑time inference pipeline with <100ms p95 latency.",
-      "Led product design system adopting Tailwind + shadcn for velocity.",
-    ],
-  },
-  {
-    role: "Research Assistant",
-    org: "Embodied AI Lab",
-    date: "2023 — 2024",
+    role: "Cofounder & Full-Stack Engineer",
+    org: "AI Stealth Startup",
+    date: "Jan 2025 — Present",
     loc: "Cambridge, MA",
     bullets: [
-      "Prototyped energy‑based compositional scene models for manipulation tasks.",
-      "Co‑authored workshop paper; open‑sourced dataset tools.",
+      "Co-founded an AI startup; conducted market research, product strategy, and user surveys of 100+ early users to align technical development with customer needs",
+      "Led product design and full-stack development (React/Next.js/Tailwind, backend + AI models), delivering a modern web app adopted by early users",
+      "Established agile processes for rapid iteration and oversaw product lifecycle from ideation through deployment, coordinating design, engineering, and user feedback",
     ],
+    tags: ["Javascript", "React", "Next.js", "CSS", "AI", "Django"],
+  },
+  {
+    role: "Frontend/Full-Stack Software Engineering Intern",
+    org: "GP Enterprise Solutions",
+    date: "Jun 2025 — Aug 2025",
+    loc: "Albany, NY",
+    bullets: [
+      "Fixed critical platform bugs and optimized workflows, reducing user-reported errors by 40% and improving retention",
+      "Restructured SQL queries and filter logic, cutting database response times by 20% and enabling faster access to high-volume financial data",
+      "Shipped high-demand features (file downloads, form management) and collaborated across teams to refine APIs and frontend UX",
+    ],
+    tags: ["Javascript", "React", "Next.js", "CSS", "MySQL"],
+  },
+  {
+    role: "Research Assistant (with Prof. Yilun Du)",
+    org: "Harvard AI Research Lab",
+    date: "May 2025 — Aug 2025",
+    loc: "Cambridge, MA",
+    bullets: [
+      "Developed a PyTorch pipeline combining Mask R-CNN and MiDaS to extract per-object 3D centroids from RGB data",
+      "Designed energy-based compositional models to evaluate and optimize scene plausibility for embodied AI agents",
+      "Benchmarked performance on novel indoor layouts and released open-source tooling to support reproducible research",
+    ],
+    tags: ["Python", "PyTorch", "Tensorflow", "Computer Vision", "Energy-Based Compositional Models", "AI Research"],
+  },
+  {
+    role: "Web Developer",
+    org: "Harvard Datamatch",
+    date: "Sep 2024 — Present",
+    loc: "Cambridge, MA",
+    bullets: [
+      "Redesigned the Datamatch UI in Next.js with a cross-functional team, improving clarity and UX for 22,000+ annual users",
+      "Implemented new features for event promotion and user engagement while maintaining a consistent visual identity and brand tone",
+    ],
+    tags: ["TypeScript", "Next.js", "React", "CSS", "UX"],
+  },
+  {
+    role: "Head of Electrical & Programming, Pit Chief, Outreach Lead",
+    org: "FIRST Robotics Team 1493",
+    date: "Sep 2019 — Jun 2023",
+    loc: "Troy, NY",
+    bullets: [
+      "Led electrical and programming subteams, building competition-ready robot control systems and reliable codebases",
+      "Directed pit operations at high-stakes competitions, adaptively troubleshooting hardware/software issues under strict time constraints and pressure",
+      "Placed 23rd at the 2022 FIRST Robotics World Championship (Houston, TX); organized STEM outreach programs and community initiatives",
+      "Built an automated computer vision aiming system that aligned the shooter in real time, boosting scoring accuracy  90% and reducing the need for manual adjustments during matches",
+    ],
+    tags: ["Java", "Robotics", "Electrical Engineering", "Leadership", "Computer Vision", "Python", "OpenCV", "STEM Outreach"],
   },
 ];
+
+
+
+const PROJECTS = [
+  {
+    title: "College Spreadsheets",
+    desc: "Created a Python/Pandas + Google APIs platform to compare 4,000+ colleges across hundreds of criteria. Enabled real-time filtering, multi-dimensional search, and automated updates through integrated APIs.",
+    purpose: "Personal Project",
+    tags: ["Python", "Pandas", "Google APIs", "Data Science"],
+    image: "College Sheets.png",
+    links: {source: "https://github.com/Night5kies/College-Sheets"},
+  },
+  {
+    title: "Negotiation Club Website",
+    desc: "Launched the Harvard Undergraduate Negotiation Club’s first website with React/Next.js. Delivered a mobile-friendly platform with event announcements, member bios, and recruitment resources.",
+    purpose: "Harvard Negotiation Club",
+    tags: ["JavaScript", "React", "Next.js", "Tailwind", "Web Development"],
+    image: "HUNC.png",
+    links: { live: "https://www.harvardundergradnegotiation.org/", source: "https://github.com/Night5kies/hunc" },
+  },
+  {
+    title: "Energy-Based Compositional Modeling (EBCM) Research",
+    desc: "Researched modular 3D scene understanding using energy-based models for embodied agents. Built PyTorch pipelines combining Mask R-CNN and MiDaS to extract object-level 3D centroids and optimize scene plausibility.",
+    purpose: "Academic research in computer vision and robotics",
+    tags: ["Python", "PyTorch", "Computer Vision", "Energy-Based Models", "Research"],
+    image: "EBCM.png",
+    links: { source: "https://github.com/Night5kies/EBCM-prototype" },
+  },
+  {
+    title: "Harvard Datamatch",
+    desc: "Redesigned Datamatch’s website in Next.js with a cross-functional team, improving clarity and UX for 22,000+ annual users. Enhanced accessibility and performance while adding event features to boost engagement.",
+    purpose: "Campus matchmaking & event platform",
+    tags: ["Next.js", "React", "Accessibility", "Web Performance", "UX"],
+    image: "Datamatch.png",
+    links: { live: "https://datamatch.me/" },
+  },
+  {
+    title: "Light in the Dark (3D RPG)",
+    desc: "Directed a 10-person team to design and build a 3D RPG game with Unity. Developed modular combat, dialogue, cutscene, and animation systems, ensuring smooth gameplay and cross-functional collaboration.",
+    purpose: "Personal Group Project",
+    tags: ["Unity", "C#", "Game Dev", "Team Leadership"],
+    image: "Light in the Dark.png",
+    links: { source: "https://github.com/Night5kies/Light-in-the-Dark" },
+  },
+  {
+    title: "2D-in-3D Game",
+    desc: "Developed a Unity game blending Space Invaders, Breakout, and Flappy Bird mechanics. Players shoot meteors to stay afloat via recoil, balancing survival and offense in a retro 2D-in-3D style.",
+    purpose: "Personal Project/Hackathon",
+    tags: ["Python", "Pygame", "Game Dev"],
+    image: "2D in 3D.png",
+    links: { live: "https://devpost.com/software/2d-in-3d-10i3ma", source: "https://github.com/Night5kies/2D-in-3D" },
+  },
+  {
+    title: "Operating Systems Project",
+    desc: "Built a minimal OS in C++ with a custom heap allocator, virtual memory, and syscall interface. Added thread-safe I/O and a preemptive scheduler to simulate multitasking and safe concurrent file access.",
+    purpose: "OS Class",
+    tags: ["C++", "Operating Systems"],
+    image: "https://picsum.photos/seed/osproject/800/500",
+    links: { source: "https://github.com/Night5kies/CS-61" },
+  },
+  {
+    title: "C1 Terminal Competition Algorithm",
+    desc: "Led a 3-person team to build an agent for Correlation One’s Tower Defense competition. Ranked 75th of 66,265 players and achieved a 60% win rate across 7,425 matches with adaptive offensive/defensive strategies.",
+    purpose: "Competition Entry",
+    tags: ["Python", "Algorithms", "Game AI"],
+    image: "C1 Terminal.png",
+    links: { live: "https://terminal.c1games.com/home", source: "https://github.com/Night5kies/C1-Terminal-NightShade" },
+  },
+  {
+    title: "Biodiversity Hub Website",
+    desc: "Built a React/Next.js + Supabase web app with fuzzy search, real-time updates, and adaptive UI. Designed responsive Tailwind interfaces to support mobile and low-latency use for biodiversity researchers.",
+    purpose: "Tech for Social Good Club Project",
+    tags: ["TypeScript", "React", "Next.js", "Supabase"],
+    image: "https://picsum.photos/seed/lightdark/800/500",
+    links: { source: "https://github.com/Night5kies/f24-eng-r2-deliverable" },
+  },
+  {
+    title: "Dino Game",
+    desc: "Recreated the classic Chrome Dino game in Python with Pygame. Implemented obstacle spawning, collision detection, and increasing difficulty for an endless runner experience.",
+    purpose: "Personal Project",
+    tags: ["Python", "Pygame", "Game Dev"],
+    image: "Dino Game.png",
+    links: { live: "#", source: "#" },
+  },
+];
+
+
+
+
+
 
 const SKILLS = [
   "TypeScript", "React", "Next.js", "Tailwind", "Node.js", "Python", "PyTorch", "Postgres", "Redis", "WebRTC", "gRPC", "AWS" , "Docker", "Kubernetes"
@@ -129,7 +219,6 @@ const sections = [
   { id: "home", label: "Home" },
   { id: "projects", label: "Projects" },
   { id: "experience", label: "Experience" },
-  { id: "blog", label: "Writing" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -173,16 +262,16 @@ function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b" suppressHydrationWarning>
+    <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-sky-500/30" suppressHydrationWarning>
       <div className="mx-auto max-w-6xl px-4 py-3 flex items-center gap-3">
-        <Sparkles className="h-5 w-5" />
-        <span className="font-semibold">{PROFILE.name}</span>
+        <Sparkles className="h-5 w-5 text-sky-400" />
+        <span className="font-semibold text-sky-600 dark:text-sky-400">{PROFILE.name}</span>
         <nav className="ml-auto hidden md:flex items-center gap-1">
           {sections.map((s) => (
             <Button
               key={s.id}
               variant="ghost"
-              className="text-sm"
+              className="text-sm hover:text-sky-500"
               onClick={() => document.getElementById(s.id)?.scrollIntoView({ behavior: "smooth" })}
             >
               {s.label}
@@ -192,27 +281,10 @@ function Header() {
         <div className="ml-auto md:ml-2 flex items-center gap-2">
           {/* Render theme icon only after mount to avoid SSR mismatch */}
           {mounted && (
-            <Button variant="ghost" size="icon" aria-label="Toggle theme" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}> 
+            <Button variant="ghost" size="icon" aria-label="Toggle theme" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} className="text-sky-500"> 
               {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />} 
             </Button>
           )}
-          <Dialog open={open} onOpenChange={setOpen}>
-            <DialogTrigger asChild>
-              <Button variant="outline" className="gap-2"><Command className="h-4 w-4"/>Search</Button>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <DialogTitle>Quick Jump</DialogTitle>
-              </DialogHeader>
-              <div className="grid gap-2">
-                {sections.map((s) => (
-                  <Button key={s.id} variant="ghost" className="justify-start" onClick={() => { setOpen(false); document.getElementById(s.id)?.scrollIntoView({ behavior: "smooth" }); }}>
-                    {s.label}
-                  </Button>
-                ))}
-              </div>
-            </DialogContent>
-          </Dialog>
         </div>
       </div>
     </header>
@@ -344,37 +416,37 @@ function SparkleField() {
 function Hero() {
   return (
     <section id="home" className="relative overflow-hidden h-screen flex items-center justify-center mt-[-10vh]">
-      <div className="absolute inset-0 -z-10 opacity-30 dark:opacity-40"/>
+      <div className="absolute inset-0 -z-10 opacity-30 dark:opacity-40 bg-gradient-to-b from-sky-100/20 to-transparent dark:from-sky-900/20"/>
       <SparkleField />
       <div className="mx-auto max-w-6xl px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
         <motion.div variants={containerVariants} initial="hidden" animate="show" className="space-y-6">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight bg-clip-text bg-[linear-gradient(90deg,theme(colors.foreground),theme(colors.primary))]">
             {PROFILE.name}
           </h1>
-          <p className="text-lg text-foreground">{PROFILE.title}</p>
-          <p className="text-foreground max-w-prose">{PROFILE.blurb}</p>
+          <p className="text-lg text-sky-800 dark:text-sky-200">{PROFILE.title}</p>
+          <p className="text-sky-800 dark:text-sky-200 max-w-prose">{PROFILE.blurb}</p>
           <div className="flex flex-wrap gap-3">
-            <Button onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })} className='cursor-pointer hover:cursor-click' >
+            <Button onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })} className='bg-sky-500 hover:bg-sky-600 text-white'>
               See my work <ArrowRight className="ml-2 h-4 w-4"/>
             </Button>
-            <Button variant="secondary" onClick={() => window.open(PROFILE.resumeUrl, "_blank")} className="cursor-pointer hover:cursor-click">
+            <Button variant="secondary" onClick={() => window.open(PROFILE.resumeUrl, "_blank")} className="border-sky-500 text-sky-600 dark:text-sky-400">
               Resume <Download className="ml-2 h-4 w-4"/>
             </Button>
           </div>
           <div className="flex items-center gap-3 pt-2">
-            <a aria-label="GitHub" href={PROFILE.social.github} target="_blank" rel="noreferrer" className="opacity-80 hover:opacity-100"><Github/></a>
-            <a aria-label="LinkedIn" href={PROFILE.social.linkedin} target="_blank" rel="noreferrer" className="opacity-80 hover:opacity-100"><Linkedin/></a>
-            <a aria-label="Email" href={PROFILE.social.email} className="opacity-80 hover:opacity-100"><Mail/></a>
+            <a aria-label="GitHub" href={PROFILE.social.github} target="_blank" rel="noreferrer" className="opacity-80 hover:text-sky-500"><Github/></a>
+            <a aria-label="LinkedIn" href={PROFILE.social.linkedin} target="_blank" rel="noreferrer" className="opacity-80 hover:text-sky-500"><Linkedin/></a>
+            <a aria-label="Email" href={PROFILE.social.email} className="opacity-80 hover:text-sky-500"><Mail/></a>
           </div>
         </motion.div>
         <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="relative">
-          <div className="aspect-[4/3] rounded-2xl overflow-hidden border shadow-xl bg-gradient-to-br from-muted to-background">
-            <img src="https://picsum.photos/seed/portrait/1200/900" alt="Portrait" className="h-full w-full object-cover"/>
+          <div className="aspect-[4/3] rounded-2xl overflow-hidden border shadow-xl bg-gradient-to-br from-sky-50 to-background dark:from-sky-950/30">
+            <img src="kevin.jpeg" alt="Portrait" className="h-full w-full object-cover"/>
           </div>
           <div className="absolute -bottom-4 -right-4 hidden md:block">
-            <Card className="rounded-2xl shadow-lg">
-              <CardContent className="p-3 text-sm flex items-center gap-2">
-                <MapPin className="h-4 w-4"/>
+            <Card className="rounded-2xl shadow-lg border-sky-200 dark:border-sky-800">
+              <CardContent className="p-3 text-sm flex items-center gap-2 text-sky-700 dark:text-sky-300">
+                <MapPin className="h-4 w-4 text-sky-500"/>
                 {PROFILE.location}
               </CardContent>
             </Card>
@@ -387,27 +459,53 @@ function Hero() {
 
 // parallax tilt for project cards
 function TiltCard({ children }: {children: React.ReactNode}) {
-  const ref = useRef<HTMLDivElement|null>(null);
-  const rx = useMotionValue(0); const ry = useMotionValue(0);
-  const tX = useTransform(ry, [-1,1], [-6,6]);
-  const tY = useTransform(rx, [-1,1], [6,-6]);
-  useEffect(()=>{
-    const el = ref.current!;
-    const onMove = (e: MouseEvent)=>{
-      const r = el.getBoundingClientRect();
-      const x = (e.clientX - r.left)/r.width*2-1;
-      const y = (e.clientY - r.top)/r.height*2-1;
-      rx.set(y); ry.set(x);
-    };
-    const onLeave = ()=>{rx.set(0); ry.set(0);};
-    el.addEventListener('mousemove', onMove);
-    el.addEventListener('mouseleave', onLeave);
-    return ()=>{el.removeEventListener('mousemove', onMove); el.removeEventListener('mouseleave', onLeave);};
-  },[]);
+  // Simpler micro-interaction: scale up slightly on hover instead of complex tilt
   return (
-    <motion.div ref={ref} style={{ rotateX: tY, rotateY: tX, transformStyle: 'preserve-3d' }}>
-      {children}
+    <motion.div className="h-full flex-1" whileHover={{ scale: 1.03 }} transition={{ type: 'spring', stiffness: 260, damping: 20 }} style={{ transformStyle: 'preserve-3d' }}>
+      <div className="h-full">{children}</div>
     </motion.div>
+  );
+}
+
+function Experience() {
+  return (
+    <section id="experience" className="mx-auto max-w-6xl px-4 py-16">
+      <motion.div initial={{ opacity: 0, x: 12 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
+        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">Experience</h2>
+      </motion.div>
+      <div className="relative pl-6">
+        <div className="absolute left-2 top-0 bottom-0 w-px bg-border"/>
+        <div className="space-y-6">
+          {EXPERIENCE.map((e, i) => (
+            <motion.div key={e.role} initial={{ opacity: 0, x: 12 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: i * 0.1 }}>
+              <div key={e.role} className="relative">
+                <div className="absolute -left-[7px] top-1.5 h-3.5 w-3.5 rounded-full bg-sky-700  dark:bg-sky-300 "/>
+                <Card className="rounded-xl">
+                  <CardHeader className="pb-2">
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      <div>
+                        <CardTitle className="text-lg">{e.role}</CardTitle>
+                        <p className="text-md text-muted-foreground mt-1">{e.org}</p>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm text-sky-800 dark:text-sky-200"><Calendar className="h-4 w-4"/>{e.date}</div>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-sky-800 dark:text-sky-200"><MapPin className="h-4 w-4"/>{e.loc}</div>
+                  </CardHeader>
+                  <CardContent className="pt-0 pb-4">
+                    <ul className="list-disc pl-5 text-sm space-y-1">
+                      {e.bullets.map((b) => <li key={b}>{b}</li>)}
+                    </ul>
+                    <div className="mt-3 flex flex-wrap gap-1.5">
+                      {(e.tags || []).map(t => <Badge key={t} variant="secondary" className="text-sky-700 dark:text-sky-300">{t}</Badge>)}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -419,76 +517,70 @@ function Projects() {
   return (
     <section id="projects" className="mx-auto max-w-6xl px-4 py-16">
       <div className="flex items-end justify-between gap-4 mb-6">
-        <div>
-          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Selected Projects</h2>
-          <p className="text-sm text-muted-foreground">A few things I’ve shipped recently.</p>
-        </div>
-        <div className="flex flex-wrap gap-2">
-          {tags.map(tag => (
-            <Badge key={tag} onClick={() => setActive(tag)} className={`cursor-pointer ${active === tag ? "bg-primary text-primary-foreground" : "opacity-70 hover:opacity-100"}`}>{tag}</Badge>
-          ))}
-        </div>
+        <motion.div initial={{ opacity: 0, x: 12 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
+          <div>
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Projects</h2>
+            <p className="text-sm text-muted-foreground">A few things I’ve shipped recently.</p>
+          </div>
+        </motion.div>
+        <motion.div initial={{ opacity: 0, x: 12 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
+          <div className="flex flex-wrap gap-2">
+            {tags.map(tag => (
+              <Badge key={tag} onClick={() => setActive(tag)} className={`cursor-pointer ${active === tag ? "bg-primary text-primary-foreground" : "opacity-70 hover:opacity-100"}`}>{tag}</Badge>
+            ))}
+          </div>
+        </motion.div>
       </div>
 
       <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {filtered.map((p, i) => (
-          <motion.div layout key={p.title} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.05 }}>
+          <motion.div layout key={p.title} className="h-full flex" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: i * 0.1 }}>
             <TiltCard>
-              <Card className="group overflow-hidden rounded-2xl border shadow-sm hover:shadow-2xl transition-shadow">
+              <Card className="h-full flex-1 flex flex-col group overflow-hidden rounded-2xl border shadow-sm hover:shadow-2xl transition-shadow">
                 <CardHeader className="p-0">
                   <div className="overflow-hidden">
                     <img src={p.image} alt={p.title} className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105"/>
                   </div>
-                  <CardTitle className="px-4 pt-4 text-lg">{p.title}</CardTitle>
+                  <div className="px-4 pt-4">
+                    <CardTitle className="text-lg">{p.title}</CardTitle>
+                    {p.purpose ? <p className="text-medium text-gray-600  mt-1 dark:text-gray-300">{p.purpose}</p> : null}
+                  </div>
                 </CardHeader>
-                <CardContent className="px-4 pt-2 pb-0 space-y-3">
+                <CardContent className="px-4 pt-2 pb-0 space-y-3 flex-1">
                   <p className="text-sm text-muted-foreground min-h-[48px]">{p.desc}</p>
                   <div className="flex flex-wrap gap-1.5">
-                    {p.tags.map(t => <Badge key={t} variant="secondary">{t}</Badge>)}
+                    {p.tags.map(t => <Badge key={t} variant="secondary" className="text-sky-700 dark:text-sky-300 bg-gray-400/30 dark:bg-gray-600/20">{t}</Badge>)}
                   </div>
-                  <p className="text-xs text-muted-foreground">{p.impact}</p>
                 </CardContent>
-                <CardFooter className="p-4 flex items-center gap-2">
-                  <Button variant="secondary" size="sm" onClick={() => window.open(p.links.live, "_blank")}>Live <ExternalLink className="ml-1 h-3.5 w-3.5"/></Button>
-                  <Button variant="ghost" size="sm" onClick={() => window.open(p.links.source, "_blank")}>Source <Github className="ml-1 h-3.5 w-3.5"/></Button>
+                <CardFooter className="flex items-center gap-2">
+                  {p.links.live && (
+                    <Button
+                      variant="secondary"
+                      size="sm"
+                      className="flex items-center bg-sky-100 hover:bg-sky-200 dark:bg-gray-800 dark:hover:bg-sky-700/40 transition-colors hover:[&>svg]:-translate-y-0.5"
+                      onClick={() => window.open(p.links.live, "_blank")}
+                    >
+                      Live
+                      <ExternalLink className="ml-1 h-3.5 w-3.5 transition-transform transform" />
+                    </Button>
+                  )}
+                  {p.links.source && (
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="flex items-center bg-sky-100 hover:bg-sky-200 dark:bg-gray-800 dark:hover:bg-sky-700/40 transition-colors hover:[&>svg]:-translate-y-0.5"
+                      onClick={() => window.open(p.links.source, "_blank")}
+                    >
+                      Source
+                      <Github className="ml-1 h-3.5 w-3.5 transition-transform transform" />
+                    </Button>
+                  )}
                 </CardFooter>
               </Card>
             </TiltCard>
           </motion.div>
         ))}
       </motion.div>
-    </section>
-  );
-}
-
-function Experience() {
-  return (
-    <section id="experience" className="mx-auto max-w-6xl px-4 py-16">
-      <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">Experience</h2>
-      <div className="relative pl-6">
-        <div className="absolute left-2 top-0 bottom-0 w-px bg-border"/>
-        <div className="space-y-6">
-          {EXPERIENCE.map((e) => (
-            <div key={e.role} className="relative">
-              <div className="absolute -left-[7px] top-1.5 h-3.5 w-3.5 rounded-full bg-primary"/>
-              <Card className="rounded-xl">
-                <CardHeader className="pb-2">
-                  <div className="flex flex-wrap items-center justify-between gap-3">
-                    <CardTitle className="text-lg">{e.role} — {e.org}</CardTitle>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground"><Calendar className="h-4 w-4"/>{e.date}</div>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground"><MapPin className="h-4 w-4"/>{e.loc}</div>
-                </CardHeader>
-                <CardContent className="pt-0 pb-4">
-                  <ul className="list-disc pl-5 text-sm space-y-1">
-                    {e.bullets.map((b) => <li key={b}>{b}</li>)}
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-          ))}
-        </div>
-      </div>
     </section>
   );
 }
@@ -503,34 +595,11 @@ function Skills() {
   );
 }
 
-function Blog() {
-  return (
-    <section id="blog" className="mx-auto max-w-6xl px-4 py-16">
-      <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">Writing</h2>
-      <div className="grid md:grid-cols-2 gap-6">
-        {BLOG.map(post => (
-          <Card key={post.title} className="rounded-xl hover:shadow-lg transition-shadow">
-            <CardHeader>
-              <CardTitle className="text-lg">{post.title}</CardTitle>
-            </CardHeader>
-            <CardFooter className="flex items-center justify-between px-6 pb-6">
-              <span className="text-sm text-muted-foreground">{new Date(post.date).toLocaleDateString()}</span>
-              <Button size="sm" onClick={() => window.open(post.href, "_blank")}>
-                Read <ArrowUpRight className="ml-2 h-4 w-4"/>
-              </Button>
-            </CardFooter>
-          </Card>
-        ))}
-      </div>
-    </section>
-  );
-}
-
 
 export default function PortfolioSite() {  
 
   return (
-    <div className="relative bg-background text-foreground min-h-dvh selection:bg-primary/20">
+    <div className="relative bg-background text-foreground min-h-dvh selection:bg-sky-200/40 dark:selection:bg-sky-600/30">
       {/* Background layer */}
       <ShardBackground />
 
@@ -540,13 +609,32 @@ export default function PortfolioSite() {
         <Header />
         <main>
           <Hero />
-          <Projects />
-          <Skills />
+          {/* <Skills /> */}
           <Experience />
-          <Blog />
+          <Projects />
+          <section id="contact" className="mx-auto max-w-6xl px-4 py-12">
+            <div className="text-center">
+              <h2 className="text-xl font-semibold mb-3">Get in touch</h2>
+              <p className="text-sm text-muted-foreground mb-4">Feel free to reach out — I&apos;m always open to collaborating or chatting about interesting projects.</p>
+              <div className="flex items-center justify-center gap-6">
+                <a aria-label="GitHub" href={PROFILE.social.github} target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-sky-500">
+                  <Github />
+                  <span className="text-sm">GitHub</span>
+                </a>
+                <a aria-label="LinkedIn" href={PROFILE.social.linkedin} target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-sky-500">
+                  <Linkedin />
+                  <span className="text-sm">LinkedIn</span>
+                </a>
+                <a aria-label="Email" href={PROFILE.social.email} className="flex items-center gap-2 hover:text-sky-500">
+                  <Mail />
+                  <span className="text-sm">Email</span>
+                </a>
+              </div>
+            </div>
+          </section>
         </main>
-        <footer className="border-t">
-          <div className="mx-auto max-w-6xl px-4 py-8 text-xs text-muted-foreground flex items-center justify-center">
+        <footer className="border-t border-sky-200 dark:border-sky-800">
+          <div className="mx-auto max-w-6xl px-4 py-8 text-xs text-muted-foreground flex items-center justify-center text-sky-700 dark:text-sky-300">
             © 2025 {PROFILE.name}
           </div>
         </footer>
