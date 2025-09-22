@@ -58,7 +58,7 @@ const EXPERIENCE = [
     tags: ["Javascript", "React", "Next.js", "CSS", "AI", "Django"],
   },
   {
-    role: "Frontend/Full-Stack Software Engineering Intern",
+    role: "Full-Stack Software Engineering Intern",
     org: "GP Enterprise Solutions",
     date: "Jun 2025 — Aug 2025",
     loc: "Albany, NY",
