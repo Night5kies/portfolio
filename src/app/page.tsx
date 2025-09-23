@@ -152,7 +152,7 @@ const PROJECTS = [
   },
   {
     title: "2D-in-3D Game",
-    desc: "Developed a Unity game blending Space Invaders, Breakout, and Flappy Bird mechanics. Players shoot meteors to stay afloat via recoil, balancing survival and offense in a retro 2D-in-3D style.",
+    desc: "Developed a 2D game blending Space Invaders, Breakout, and Flappy Bird mechanics. Players shoot meteors to stay afloat via recoil, balancing survival and offense in a retro 2D style.",
     purpose: "Personal Project/Hackathon",
     tags: ["Python", "Pygame", "Game Dev"],
     image: "2D in 3D.png",
