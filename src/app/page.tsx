@@ -180,7 +180,7 @@ const PROJECTS = [
     purpose: "Tech for Social Good Club Project",
     tags: ["TypeScript", "React", "Next.js", "Supabase"],
     image: "https://picsum.photos/seed/lightdark/800/500",
-    links: { source: "https://github.com/Night5kies/f24-eng-r2-deliverable" },
+    links: { live: "https://f24-eng-r2-deliverable-ivory.vercel.app/",source: "https://github.com/Night5kies/f24-eng-r2-deliverable" },
   },
   {
     title: "Dino Game",
