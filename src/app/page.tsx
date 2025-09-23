@@ -168,7 +168,7 @@ const PROJECTS = [
   },
   {
     title: "C1 Terminal Competition Algorithm",
-    desc: "Led a 3-person team to build an agent for Correlation One’s Tower Defense competition. Ranked 75th of 66,265 players and achieved a 60% win rate across 7,425 matches with adaptive offensive/defensive strategies.",
+    desc: "Led a 3-person team to build an agent for Correlation One’s Tower Defense competition. Ranked 67th of 66,265 players and achieved a 60% win rate across 7,425 matches with adaptive offensive/defensive strategies.",
     purpose: "Competition Entry",
     tags: ["Python", "Algorithms", "Game AI"],
     image: "C1 Terminal.png",
