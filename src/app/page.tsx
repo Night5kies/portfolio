@@ -201,24 +201,11 @@ const SKILLS = [
   "TypeScript", "React", "Next.js", "Tailwind", "Node.js", "Python", "PyTorch", "Postgres", "Redis", "WebRTC", "gRPC", "AWS" , "Docker", "Kubernetes"
 ];
 
-const BLOG = [
-  {
-    title: "A tiny guide to production‑ready AI features",
-    date: "2025‑08‑12",
-    href: "#",
-  },
-  {
-    title: "Energy‑based models as building blocks for 3D scene understanding",
-    date: "2025‑07‑13",
-    href: "#",
-  },
-];
-
 // ---------- Utilities ----------
 const sections = [
   { id: "home", label: "Home" },
-  { id: "projects", label: "Projects" },
   { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
   { id: "contact", label: "Contact" },
 ];
 
