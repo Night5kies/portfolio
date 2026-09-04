@@ -32,9 +32,9 @@ const PROFILE = {
   title: "Software Engineer @ Harvard",
   location: "Cambridge, MA",
   blurb:
-    "Hi! I'm currently a junior at Harvard pursuing a double major in Computer Science and Physics. I'm passionate about all different kinds of software and engineering, from AI to web development to robotics to game development! In my free time, I love dancing, playing instruments, running, playing frisbee, travelling, trying new restaurants and more!",
+    "Hi! I'm currently a senior at Harvard pursuing a double major in Computer Science and Physics. I'm passionate about all different kinds of software and engineering, from AI to web development to robotics to game development! In my free time, I love dancing, playing instruments, running, playing frisbee, travelling, trying new restaurants and more!",
   email: "kevinmcleod@college.harvard.edu",
-  resumeUrl: "/Kevin McLeod Resume.pdf",
+  resumeUrl: "/Kevin McLeod - Resume.pdf",
   social: {
     github: "https://github.com/night5kies",
     linkedin: "https://linkedin.com/in/kevin-jh-mcleod",
@@ -46,9 +46,21 @@ const PROFILE = {
 
 const EXPERIENCE = [
   {
+    role: "Software Engineering Intern",
+    org: "Microsoft",
+    date: "May 2026 — Aug 2026",
+    loc: "Redmond, WA",
+    bullets: [
+      "Developed text-to-text quality metrics to evaluate Bing image experiences and guide iterative improvements",
+      "Prototyped intent-driven GenAI image experiences that curated results around user needs",
+      "Owned a new GenAI image experience end to end—from design and implementation through evaluation to controlled production rollout",
+    ],
+    tags: ["GenAI", "Evaluation Metrics", "Prototyping", "Product Development"],
+  },
+  {
     role: "Cofounder & Full-Stack Engineer",
     org: "AI Stealth Startup",
-    date: "Jan 2025 — Present",
+    date: "2025 — 2026",
     loc: "Cambridge, MA",
     bullets: [
       "Co-founded an AI startup; conducted market research, product strategy, and user surveys of 100+ early users to align technical development with customer needs",
@@ -84,7 +96,7 @@ const EXPERIENCE = [
   {
     role: "Web Developer",
     org: "Harvard Datamatch",
-    date: "Sep 2024 — Present",
+    date: "2024 — 2026",
     loc: "Cambridge, MA",
     bullets: [
       "Redesigned the Datamatch UI in Next.js with a cross-functional team, improving clarity and UX for 22,000+ annual users",
@@ -110,6 +122,22 @@ const EXPERIENCE = [
 
 
 const PROJECTS = [
+  {
+    title: "SYZY — Link-First Social Scheduling App",
+    desc: "Built a link-first group scheduling app: an organizer shares a link in a group chat and attendees respond on mobile web with no account or download. Engineered a FastAPI/PostgreSQL/Redis + Celery backend with a request/proposal/response state machine, tokenized share links, and a background reminder pipeline, plus privacy-first Google Calendar OAuth for free/busy suggestions and idempotent event write-back. Frontend in Next.js 15 / React 19, covered by Playwright and axe accessibility tests.",
+    purpose: "Personal Project",
+    tags: ["Python", "FastAPI", "PostgreSQL", "Redis", "Celery", "Next.js", "React", "TypeScript"],
+    image: "SYZY.png",
+    links: { source: "https://github.com/Night5kies/calendar_syncing" },
+  },
+  {
+    title: "ClipV.I.S. (Gesture-Controlled Hologram)",
+    desc: "Built real-time, webcam-based gesture controls with MediaPipe and TypeScript, mapping pinch, point, and other gestures to 3D model selection, movement, rotation, and UI actions. Integrated the gesture events into a Three.js / React Three Fiber hologram experience.",
+    purpose: "Microsoft Intern Hackathon — 3rd place in category",
+    tags: ["TypeScript", "Three.js", "React Three Fiber", "Node.js", "MediaPipe"],
+    image: "clipvis.png",
+    links: { source: "https://github.com/j-nette/ClipV.I.S." },
+  },
   {
     title: "College Spreadsheets",
     desc: "Created a Python/Pandas + Google APIs platform to compare 4,000+ colleges across hundreds of criteria. Enabled real-time filtering, multi-dimensional search, and automated updates through integrated APIs.",
@@ -163,7 +191,6 @@ const PROJECTS = [
     desc: "Built a minimal OS in C++ with a custom heap allocator, virtual memory, and syscall interface. Added thread-safe I/O and a preemptive scheduler to simulate multitasking and safe concurrent file access.",
     purpose: "OS Class",
     tags: ["C++", "Operating Systems"],
-    image: "https://picsum.photos/seed/osproject/800/500",
     links: { source: "https://github.com/Night5kies/CS-61" },
   },
   {
@@ -179,7 +206,6 @@ const PROJECTS = [
     desc: "Built a React/Next.js + Supabase web app with fuzzy search, real-time updates, and adaptive UI. Designed responsive Tailwind interfaces to support mobile and low-latency use for biodiversity researchers.",
     purpose: "Tech for Social Good Club Project",
     tags: ["TypeScript", "React", "Next.js", "Supabase"],
-    image: "https://picsum.photos/seed/lightdark/800/500",
     links: { live: "https://f24-eng-r2-deliverable-ivory.vercel.app/",source: "https://github.com/Night5kies/f24-eng-r2-deliverable" },
   },
   {
@@ -505,6 +531,81 @@ function Experience() {
   );
 }
 
+// ---------- Project thumbnail + fallback ----------
+// Projects without a screenshot get a deterministic monogram tile: the hue is
+// derived from the title, so a given project always renders the same color.
+const THUMB_STOPWORDS = new Set(["a", "an", "and", "for", "in", "of", "on", "the", "to", "with"]);
+
+function thumbHue(title: string) {
+  let h = 0;
+  for (let i = 0; i < title.length; i++) h = (h * 31 + title.charCodeAt(i)) | 0;
+  return Math.abs(h) % 360;
+}
+
+function thumbInitials(title: string) {
+  const head = title.split(/[—–(]/)[0];
+  const words = head
+    .replace(/[^A-Za-z0-9\s]/g, " ")
+    .split(/\s+/)
+    .filter(w => w.length > 1 && !THUMB_STOPWORDS.has(w.toLowerCase()));
+  if (words.length === 0) return "•";
+  // Acronym-style names (SYZY, EBCM) read better whole than truncated.
+  if (/^[A-Z0-9]{2,4}$/.test(words[0])) return words[0];
+  if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
+  return (words[0][0] + words[1][0]).toUpperCase();
+}
+
+function ProjectThumb({ title }: { title: string }) {
+  const hue = thumbHue(title);
+  const initials = thumbInitials(title);
+  // Yellow/green hues read much lighter at the same HSL lightness, so darken
+  // that band to keep the white monogram legible.
+  const dip = hue > 40 && hue < 200 ? 12 : 0;
+  return (
+    <div
+      aria-hidden
+      className="relative h-44 w-full transition-transform duration-500 group-hover:scale-105"
+      style={{ backgroundImage: `linear-gradient(135deg, hsl(${hue} 62% ${60 - dip}%), hsl(${(hue + 48) % 360} 68% ${44 - dip / 2}%))` }}
+    >
+      {/* soft bloom from the top-left */}
+      <div
+        className="absolute inset-0"
+        style={{ backgroundImage: "radial-gradient(120% 90% at 18% 0%, rgba(255,255,255,0.38), transparent 62%)" }}
+      />
+      {/* fine grid texture */}
+      <div
+        className="absolute inset-0 opacity-15"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,.7) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.7) 1px, transparent 1px)",
+          backgroundSize: "22px 22px",
+        }}
+      />
+      {/* tone the whole tile down in dark mode */}
+      <div className="absolute inset-0 bg-transparent dark:bg-black/30" />
+      <span
+        className="absolute inset-0 grid place-items-center font-bold tracking-tight text-white/90"
+        style={{ fontSize: initials.length > 2 ? "2.5rem" : "3.25rem" }}
+      >
+        {initials}
+      </span>
+    </div>
+  );
+}
+
+function ProjectMedia({ src, title }: { src?: string; title: string }) {
+  const [failed, setFailed] = useState(false);
+  if (!src || failed) return <ProjectThumb title={title} />;
+  return (
+    <img
+      src={src}
+      alt={title}
+      onError={() => setFailed(true)}
+      className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+    />
+  );
+}
+
 function Projects() {
   const [active, setActive] = useState<string>("All");
   const tags = useMemo(() => ["All", ...Array.from(new Set(PROJECTS.flatMap(p => p.tags)))], []);
@@ -535,7 +636,7 @@ function Projects() {
               <Card className="h-full flex-1 flex flex-col group overflow-hidden rounded-2xl border shadow-sm hover:shadow-2xl transition-shadow">
                 <CardHeader className="p-0">
                   <div className="overflow-hidden">
-                    <img src={p.image} alt={p.title} className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                    <ProjectMedia src={p.image} title={p.title} />
                   </div>
                   <div className="px-4 pt-4">
                     <CardTitle className="text-lg">{p.title}</CardTitle>
