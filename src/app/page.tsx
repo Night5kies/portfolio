@@ -152,7 +152,7 @@ const PROJECTS = [
     purpose: "Harvard Negotiation Club",
     tags: ["JavaScript", "React", "Next.js", "Tailwind", "Web Development"],
     image: "HUNC.png",
-    links: { live: "https://www.harvardundergradnegotiation.org/", source: "https://github.com/Night5kies/hunc" },
+    links: { live: "https://harvardundergradnegotiation.org/", source: "https://github.com/Night5kies/hunc" },
   },
   {
     title: "Energy-Based Compositional Modeling (EBCM) Research",
