@@ -51,23 +51,22 @@ const EXPERIENCE = [
     date: "May 2026 — Aug 2026",
     loc: "Redmond, WA",
     bullets: [
-      "Developed text-to-text quality metrics to evaluate Bing image experiences and guide iterative improvements",
-      "Prototyped intent-driven GenAI image experiences that curated results around user needs",
-      "Owned a new GenAI image experience end to end—from design and implementation through evaluation to controlled production rollout",
+      "Shipped a generative-AI image experience in Bing Images end-to-end (Bing: 1B+ monthly users), from design to review",
+      "Developed text-to-text quality metrics for Bing image experiences and used them to improve multiple experiences by 7%+",
+      "Prototyped intent-driven, curated GenAI image experiences and a new routing design that serves stacked user needs",
     ],
-    tags: ["GenAI", "Evaluation Metrics", "Prototyping", "Product Development"],
+    tags: ["C#", "C++", "GenAI", "Evaluation Metrics"],
   },
   {
-    role: "Cofounder & Full-Stack Engineer",
-    org: "AI Stealth Startup",
+    role: "Co-founder & Engineering Lead",
+    org: "Stealth AI Startup",
     date: "2025 — 2026",
     loc: "Cambridge, MA",
     bullets: [
-      "Co-founded an AI startup; conducted market research, product strategy, and user surveys of 100+ early users to align technical development with customer needs",
-      "Led product design and full-stack development (React/Next.js/Tailwind, backend + AI models), delivering a modern web app adopted by early users",
-      "Established agile processes for rapid iteration and oversaw product lifecycle from ideation through deployment, coordinating design, engineering, and user feedback",
+      "Architected the full stack from an empty repo to a working prototype: Next.js/React frontend, FastAPI backend, AI models",
+      "Ran discovery interviews and surveys with 100+ prospective users and used the findings to narrow product scope",
     ],
-    tags: ["Javascript", "React", "Next.js", "CSS", "AI", "Django"],
+    tags: ["Next.js", "React", "FastAPI", "Tailwind", "AI"],
   },
   {
     role: "Full-Stack Software Engineering Intern",
@@ -75,23 +74,21 @@ const EXPERIENCE = [
     date: "Jun 2025 — Aug 2025",
     loc: "Albany, NY",
     bullets: [
-      "Fixed critical platform bugs and optimized workflows, reducing user-reported errors by 40% and improving retention",
-      "Restructured SQL queries and filter logic, cutting database response times by 20% and enabling faster access to high-volume financial data",
-      "Shipped high-demand features (file downloads, form management) and collaborated across teams to refine APIs and frontend UX",
+      "Reduced database response times by 5% by restructuring filter logic and eliminating redundant queries",
+      "Shipped bulk file export and dynamic form management features, incorporating feedback from user interviews",
     ],
-    tags: ["Javascript", "React", "Next.js", "CSS", "MySQL"],
+    tags: ["JavaScript", "React", "SQL"],
   },
   {
-    role: "Research Assistant (with Prof. Yilun Du)",
-    org: "Harvard AI Research Lab",
+    role: "Research Assistant to Professor Yilun Du",
+    org: "Kempner Institute, Harvard",
     date: "May 2025 — Aug 2025",
     loc: "Cambridge, MA",
     bullets: [
-      "Developed a PyTorch pipeline combining Mask R-CNN and MiDaS to extract per-object 3D centroids from RGB data",
-      "Designed energy-based compositional models to evaluate and optimize scene plausibility for embodied AI agents",
-      "Benchmarked performance on novel indoor layouts and released open-source tooling to support reproducible research",
+      "Estimated relative 3D object positions from single RGB frames using Mask R-CNN instance segmentation and MiDaS depth",
+      "Built a PyTorch prototype composing per-object energy terms (ground contact, non-interpenetration, scene centering) into a differentiable scene-level objective minimized with Adam over 3D object positions",
     ],
-    tags: ["Python", "PyTorch", "Tensorflow", "Computer Vision", "Energy-Based Compositional Models", "AI Research"],
+    tags: ["Python", "PyTorch", "Computer Vision", "Mask R-CNN", "MiDaS"],
   },
   {
     role: "Web Developer",
@@ -99,10 +96,9 @@ const EXPERIENCE = [
     date: "2024 — 2026",
     loc: "Cambridge, MA",
     bullets: [
-      "Redesigned the Datamatch UI in Next.js with a cross-functional team, improving clarity and UX for 22,000+ annual users",
-      "Implemented new features for event promotion and user engagement while maintaining a consistent visual identity and brand tone",
+      "Rebuilt the Datamatch frontend in Next.js on a 5-person team, serving 22,000+ students during the matching window",
     ],
-    tags: ["TypeScript", "Next.js", "React", "CSS", "UX"],
+    tags: ["JavaScript", "Next.js", "React"],
   },
   {
     role: "Head of Electrical & Programming, Pit Chief, Outreach Lead",
@@ -131,12 +127,40 @@ const PROJECTS = [
     links: { source: "https://github.com/Night5kies/calendar_syncing" },
   },
   {
+    title: "Collaborative Text Editor on Multi-Paxos",
+    desc: "Built a real-time collaborative editor in C++23 on a Multi-Paxos replicated log with leader election, log trimming, and request batching. Designed the editor state machine with splice-based edits, OT-style rebasing of stale edits, and dedup by client serial. Cut commit latency from ~370 ms to ~60 ms under 1% packet loss and raised throughput by 43%, with an HTTP/SSE gateway, binary protocol, and crash-recovery persistence tested across six failure scenarios.",
+    purpose: "Distributed Computing Project",
+    tags: ["C++", "JavaScript", "Distributed Systems", "Paxos"],
+    links: { source: "https://github.com/Night5kies/paxos-collaborative-editor" },
+  },
+  {
     title: "ClipV.I.S. (Gesture-Controlled Hologram)",
-    desc: "Built real-time, webcam-based gesture controls with MediaPipe and TypeScript, mapping pinch, point, and other gestures to 3D model selection, movement, rotation, and UI actions. Integrated the gesture events into a Three.js / React Three Fiber hologram experience.",
-    purpose: "Microsoft Intern Hackathon — 3rd place in category",
+    desc: "Owned real-time hand-gesture controls (12 gestures: pinch-grab, two-hand scale, rotate, explode, snap views) from MediaPipe landmarks for a voice- and gesture-driven hologram, stabilized with hysteresis, debouncing, and EMA smoothing. Integrated gesture recognition into a Three.js / React Three Fiber hologram experience.",
+    purpose: "Microsoft Intern Hackathon — 3rd place",
     tags: ["TypeScript", "Three.js", "React Three Fiber", "Node.js", "MediaPipe"],
     image: "clipvis.png",
     links: { source: "https://github.com/j-nette/ClipV.I.S." },
+  },
+  {
+    title: "SLAM Agent for Maze Exploration",
+    desc: "Implemented a 2D Kalman filter (Joseph-form covariance update, speed-scaled process noise) for localization and built a multi-class log-odds occupancy grid (free/wall/flag/capture) from noisy simulated LIDAR raycasts. Explores unknown mazes autonomously with BFS frontier search, obstacle inflation with fallback replanning, and an arrive controller.",
+    purpose: "Robotics Project",
+    tags: ["Python", "NumPy", "Robotics", "SLAM"],
+    links: { source: "https://github.com/Night5kies/kalman-occupancy-grid-slam" },
+  },
+  {
+    title: "Learned Structured Pruning During Fine-Tuning",
+    desc: "Co-developed learned structured pruning masks for BERT during MMLU fine-tuning, with no fixed pruning budget. Introduced sparsity and binary-entropy quantization losses so masks converge to 0/1 and learn layer-wise compression, pruning >90% of FFN activations with a single-digit percentage-point accuracy drop vs. an unpruned fine-tuned baseline.",
+    purpose: "Machine Learning Project",
+    tags: ["Python", "PyTorch", "Machine Learning", "Model Compression"],
+    links: {},
+  },
+  {
+    title: "Multi-Robot Trajectory Optimization",
+    desc: "Extended CPDOT (multi-robot object transportation with a deformable sheet) with independently weighted planning constraints, raising planning success from 60% to 65%. Evaluated formation, topology, and obstacle-safety priorities in 4-robot simulations to identify speed vs. success tradeoffs.",
+    purpose: "Robotics Project",
+    tags: ["C++", "ROS", "MOSEK", "Robotics"],
+    links: { source: "https://github.com/Night5kies/CPDOT" },
   },
   {
     title: "College Spreadsheets",
@@ -144,11 +168,18 @@ const PROJECTS = [
     purpose: "Personal Project",
     tags: ["Python", "Pandas", "Google APIs", "Data Science"],
     image: "College Sheets.png",
-    links: {source: "https://github.com/Night5kies/College-Sheets"},
+    links: { source: "https://github.com/Night5kies/College-Sheets" },
+  },
+  {
+    title: "OS Kernel & Systems Programming",
+    desc: "Implemented virtual memory, per-process page tables, and fork/exit/page-allocation syscalls in an x86-64 kernel. Wrote a debugging malloc that catches double frees, invalid frees, out-of-bounds writes, and memory leaks, and developed a Unix shell (pipes, redirection, conditionals, background jobs) plus thread-safe I/O with byte-range locks.",
+    purpose: "Systems Programming Class",
+    tags: ["C", "C++", "x86-64", "Operating Systems"],
+    links: { source: "https://github.com/Night5kies/CS-61" },
   },
   {
     title: "Negotiation Club Website",
-    desc: "Launched the Harvard Undergraduate Negotiation Club’s first website with React/Next.js. Delivered a mobile-friendly platform with event announcements, member bios, and recruitment resources.",
+    desc: "Designed and launched the Harvard Undergraduate Negotiation Club’s website as a founding board member and web developer. Built with React and Next.js as a mobile-friendly platform with event announcements, member bios, and recruitment resources.",
     purpose: "Harvard Negotiation Club",
     tags: ["JavaScript", "React", "Next.js", "Tailwind", "Web Development"],
     image: "HUNC.png",
@@ -156,23 +187,23 @@ const PROJECTS = [
   },
   {
     title: "Energy-Based Compositional Modeling (EBCM) Research",
-    desc: "Researched modular 3D scene understanding using energy-based models for embodied agents. Built PyTorch pipelines combining Mask R-CNN and MiDaS to extract object-level 3D centroids and optimize scene plausibility.",
-    purpose: "Academic research in computer vision and robotics",
+    desc: "Estimated relative 3D object positions from single RGB frames using Mask R-CNN instance segmentation and MiDaS depth. Built a PyTorch prototype composing per-object energy terms (ground contact, non-interpenetration, scene centering) into a differentiable scene-level objective minimized with Adam over 3D object positions.",
+    purpose: "Research with Prof. Yilun Du, Kempner Institute",
     tags: ["Python", "PyTorch", "Computer Vision", "Energy-Based Models", "Research"],
     image: "EBCM.png",
     links: { source: "https://github.com/Night5kies/EBCM-prototype" },
   },
   {
     title: "Harvard Datamatch",
-    desc: "Redesigned Datamatch’s website in Next.js with a cross-functional team, improving clarity and UX for 22,000+ annual users. Enhanced accessibility and performance while adding event features to boost engagement.",
+    desc: "Rebuilt the Datamatch frontend in Next.js on a 5-person team, serving 22,000+ students during the matching window.",
     purpose: "Campus matchmaking & event platform",
-    tags: ["Next.js", "React", "Accessibility", "Web Performance", "UX"],
+    tags: ["JavaScript", "Next.js", "React"],
     image: "Datamatch.png",
     links: { live: "https://datamatch.me/" },
   },
   {
     title: "Light in the Dark (3D RPG)",
-    desc: "Directed a 10-person team to design and build a 3D RPG game with Unity. Developed modular combat, dialogue, cutscene, and animation systems, ensuring smooth gameplay and cross-functional collaboration.",
+    desc: "Led a team of 10 building a 3D RPG in Unity, coordinating game design, audio, and UI work across disciplines. Engineered animation state machines, modular combat, and Ink-based branching dialogue on an event-driven architecture.",
     purpose: "Personal Group Project",
     tags: ["Unity", "C#", "Game Dev", "Team Leadership"],
     image: "Light in the Dark.png",
@@ -187,13 +218,6 @@ const PROJECTS = [
     links: { live: "https://devpost.com/software/2d-in-3d-10i3ma", source: "https://github.com/Night5kies/2D-in-3D" },
   },
   {
-    title: "Operating Systems Project",
-    desc: "Built a minimal OS in C++ with a custom heap allocator, virtual memory, and syscall interface. Added thread-safe I/O and a preemptive scheduler to simulate multitasking and safe concurrent file access.",
-    purpose: "OS Class",
-    tags: ["C++", "Operating Systems"],
-    links: { source: "https://github.com/Night5kies/CS-61" },
-  },
-  {
     title: "C1 Terminal Competition Algorithm",
     desc: "Led a 3-person team to build an agent for Correlation One’s Tower Defense competition. Ranked 67th of 66,265 players and achieved a 60% win rate across 7,425 matches with adaptive offensive/defensive strategies.",
     purpose: "Competition Entry",
@@ -206,7 +230,7 @@ const PROJECTS = [
     desc: "Built a React/Next.js + Supabase web app with fuzzy search, real-time updates, and adaptive UI. Designed responsive Tailwind interfaces to support mobile and low-latency use for biodiversity researchers.",
     purpose: "Tech for Social Good Club Project",
     tags: ["TypeScript", "React", "Next.js", "Supabase"],
-    links: { live: "https://f24-eng-r2-deliverable-ivory.vercel.app/",source: "https://github.com/Night5kies/f24-eng-r2-deliverable" },
+    links: { source: "https://github.com/Night5kies/Biodiversity-Hub" },
   },
   {
     title: "Dino Game",
@@ -732,7 +756,7 @@ export default function PortfolioSite() {
         </main>
         <footer className="border-t border-sky-200 dark:border-sky-800">
           <div className="mx-auto max-w-6xl px-4 py-8 text-xs text-muted-foreground flex items-center justify-center text-sky-700 dark:text-sky-300">
-            © 2025 {PROFILE.name}
+            © 2026 {PROFILE.name}
           </div>
         </footer>
       </div>
